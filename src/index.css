@@ -9,3 +9,6 @@
 .event-highlight b{margin-left:auto;color:#102b67;font-size:10px;letter-spacing:0}
 .event-highlight.tomorrow{background:#fbebeb;color:#b52b37}
 .event-highlight.tomorrow b{color:#b52b37}
+
+/* Church logo upload and branding */
+.church-logo{width:54px;height:54px;object-fit:contain;display:block}.footer-logo{width:38px;height:38px;object-fit:contain}.logo-settings{background:#fff;padding:20px}.logo-settings>p{font-size:12px;color:#778092;margin:0 0 14px}.logo-preview{display:block;width:130px;height:110px;object-fit:contain;background:#fffdf8;border:1px solid #e8e1d3;padding:8px;margin:12px 0}.logo-upload-label{display:inline-flex;align-items:center;justify-content:center;background:#102b67;color:white;padding:12px 16px;font-size:12px;font-weight:700;cursor:pointer;width:max-content;max-width:100%}.logo-upload-label input{display:none}
