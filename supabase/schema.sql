@@ -98,3 +98,30 @@ for all to authenticated using (public.is_super_admin()) with check (public.is_s
 -- Allow each signed-in user to read their own administrator role.
 create policy "Admins can read their own role" on public.admin_roles
 for select to authenticated using (user_id = auth.uid());
+
+
+-- Church logo uploads (run this section once in Supabase SQL Editor)
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('church-assets', 'church-assets', true, 5242880, array['image/png','image/jpeg','image/webp','image/svg+xml'])
+on conflict (id) do update set public = true, file_size_limit = 5242880,
+  allowed_mime_types = array['image/png','image/jpeg','image/webp','image/svg+xml'];
+
+drop policy if exists "Public can view church branding" on storage.objects;
+create policy "Public can view church branding" on storage.objects
+for select using (bucket_id = 'church-assets');
+
+drop policy if exists "Admins can upload church branding" on storage.objects;
+create policy "Admins can upload church branding" on storage.objects
+for insert to authenticated with check (bucket_id = 'church-assets' and public.is_admin());
+
+drop policy if exists "Admins can update church branding" on storage.objects;
+create policy "Admins can update church branding" on storage.objects
+for update to authenticated using (bucket_id = 'church-assets' and public.is_admin())
+with check (bucket_id = 'church-assets' and public.is_admin());
+
+drop policy if exists "Admins can delete church branding" on storage.objects;
+create policy "Admins can delete church branding" on storage.objects
+for delete to authenticated using (bucket_id = 'church-assets' and public.is_admin());
+
+grant select on table public.church_settings to anon, authenticated;
+grant insert, update on table public.church_settings to authenticated;
