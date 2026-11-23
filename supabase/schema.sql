@@ -95,3 +95,6 @@ for all to authenticated using (public.is_super_admin()) with check (public.is_s
 
 -- Subsequent administrators can be invited from Supabase Authentication → Users,
 -- then assigned 'editor' by a Super Admin in the admin_roles table.
+-- Allow each signed-in user to read their own administrator role.
+create policy "Admins can read their own role" on public.admin_roles
+for select to authenticated using (user_id = auth.uid());
