@@ -15,3 +15,7 @@
 
 /* Rev. Prosper Lanya portrait */
 .pastor-photo-settings{background:#fff;padding:20px}.pastor-photo-settings>p{font-size:12px;color:#778092;margin:0 0 14px}.pastor-photo-preview{display:block;width:150px;height:180px;object-fit:cover;object-position:center top;background:#fffdf8;border:1px solid #e8e1d3;padding:5px;margin:12px 0}.pastor-photo{display:block;width:min(100%,360px);height:430px;object-fit:cover;object-position:center top;box-shadow:0 18px 45px #07163830;border:7px solid #fffdf8;outline:1px solid #d9ad47}@media(max-width:650px){.pastor-photo{height:340px;width:min(100%,300px);margin:auto}}
+
+
+/* Weekly message read-more control */
+.weekly-article-text{white-space:pre-wrap;overflow-wrap:anywhere}.weekly-toggle{margin-top:10px;padding:8px 13px;border:1px solid #e2b443;background:transparent;color:#f0c45c;font:700 11px 'DM Sans';cursor:pointer}.weekly-toggle:hover{background:#e2b443;color:#102b67}
