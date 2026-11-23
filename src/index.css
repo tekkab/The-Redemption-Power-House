@@ -62,3 +62,17 @@
 /* Emphasise the Paybill number while keeping the details on blue cards */
 .giving-details .giving-method:first-child strong{font-size:29px;letter-spacing:.045em}
 @media(max-width:650px){.giving-details .giving-method:first-child strong{font-size:26px}}
+
+
+/* Copy controls for each giving and fundraising detail */
+.giving-value-row,.giving-description-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+.giving-value-row strong{flex:1;min-width:0}
+.giving-description-row p{flex:1;min-width:0}
+.copy-detail{flex:none;border:1px solid #f0c45c;background:transparent;color:#f0c45c;border-radius:4px;padding:7px 11px;font:700 10px 'DM Sans',sans-serif;cursor:pointer}
+.copy-detail:hover{background:#f0c45c;color:#102b67}
+.giving-description-row{margin-top:6px}
+.giving-description-row p{margin:0}
+.giving-card .giving-value-row{margin:6px 0}
+.giving-card .giving-description-row{margin:5px 0 15px;color:#f0c45c}
+.giving-card .giving-description-row b{font-size:12px}
+@media(max-width:420px){.giving-value-row strong{font-size:19px}.copy-detail{padding:6px 8px}}
