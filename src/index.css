@@ -53,3 +53,8 @@
 .contact-details b{font-size:12px}
 .contact-details small{font-size:11px;line-height:1.6;color:#737b8c;overflow-wrap:anywhere}
 @media(max-width:650px){.contact-section{grid-template-columns:1fr;gap:25px;padding:60px 20px}.contact-section h2{font-size:31px}.giving-method strong{font-size:19px}}
+
+
+/* Give the main M-PESA Paybill number extra prominence */
+.giving-details .giving-method:first-child strong{font-size:29px;letter-spacing:.045em}
+@media(max-width:650px){.giving-details .giving-method:first-child strong{font-size:26px}}
