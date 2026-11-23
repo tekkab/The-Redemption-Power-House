@@ -34,10 +34,10 @@
 
 /* Verified church giving and contact details */
 .giving-details{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}
-.giving-method{background:#fff;border:1px solid #e9e3d8;border-left:3px solid #d9ad47;padding:16px 18px}
-.payment-label{display:block;font-size:9px;letter-spacing:.14em;font-weight:800;color:#b52b37;margin-bottom:7px}
-.giving-method strong{display:block;font-size:22px;letter-spacing:.025em;color:#102b67;overflow-wrap:anywhere}
-.giving-method p{font-size:11px;color:#747d8c;margin:6px 0 0}
+.giving-method{background:#102b67;border:1px solid #d9ad47;border-left:4px solid #f0c45c;padding:16px 18px;border-radius:6px}
+.giving-method .payment-label{display:block;font-size:10px;letter-spacing:.14em;font-weight:800;color:#f0c45c;margin-bottom:7px}
+.giving-method strong{display:block;font-size:22px;letter-spacing:.025em;color:#f0c45c;overflow-wrap:anywhere;background:transparent;padding:0;border-radius:0;margin-top:0}
+.giving-method p{font-size:11px;color:#fff;margin:6px 0 0}
 .giving-card .payment-label{color:#f0c45c;margin-top:8px}
 .giving-card .till-number{display:block;font-size:29px;color:#fff;letter-spacing:.05em;margin:6px 0}
 .giving-card>b{display:block;margin:5px 0 15px}
@@ -59,7 +59,6 @@
 .giving-details .giving-method:first-child strong{font-size:29px;letter-spacing:.045em}
 @media(max-width:650px){.giving-details .giving-method:first-child strong{font-size:26px}}
 
-/* Blue number panels for the giving payment details */
-.giving-details .giving-method strong{display:block;background:#f0c45c;color:#102b67;padding:10px 13px;border-radius:5px;margin-top:5px}
+/* Emphasise the Paybill number while keeping the details on blue cards */
 .giving-details .giving-method:first-child strong{font-size:29px;letter-spacing:.045em}
 @media(max-width:650px){.giving-details .giving-method:first-child strong{font-size:26px}}
