@@ -1,0 +1,19 @@
+{
+  "name": "The Redemption Power House",
+  "short_name": "Redemption Power House",
+  "description": "Church activities, announcements, weekly messages and live worship.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fffdf8",
+  "theme_color": "#102b67",
+  "icons": [
+    {
+      "src": "./trph-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
