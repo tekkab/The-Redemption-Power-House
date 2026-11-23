@@ -116,3 +116,10 @@
 @media(max-width:650px){.member-access-button{width:100%;margin:8px 0 0}.member-number-card{width:100%}.member-dashboard{align-items:stretch}.member-dashboard>.outline-admin{justify-content:center}}
 
 .member-profile-form{flex:1 1 100%;max-width:680px;margin:18px auto 0;padding:22px;background:#fff;border:1px solid #e8dfcb;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}.member-profile-form h3,.member-profile-form>p{grid-column:1/-1;margin:0}.member-profile-form h3{font-family:'Playfair Display',serif;color:#142b60;font-size:20px}.member-profile-form>p{font-size:12px;color:#727b8b}.member-profile-form label{display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:700;color:#142b60}.member-profile-form label:nth-of-type(3){grid-column:1/-1}.member-profile-form input,.member-profile-form textarea{width:100%;padding:11px;border:1px solid #ddd7ca;background:#fff;font:13px 'DM Sans',sans-serif;color:#18243a}.member-profile-form button,.member-profile-form .form-message{grid-column:1/-1;justify-self:start}.member-profile-form textarea{resize:vertical}@media(max-width:650px){.member-profile-form{grid-template-columns:1fr;margin:12px 0;padding:16px}.member-profile-form label:nth-of-type(3){grid-column:auto}}
+
+
+/* Keep sign-in and registration dialogs usable on short screens */
+.modal-backdrop{overflow-y:auto;overscroll-behavior:contain;padding:16px;}
+.admin-modal{max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;}
+.member-modal form{padding-bottom:4px;}
+@media(max-width:650px){.modal-backdrop{place-items:center;padding:10px}.admin-modal{width:100%;max-height:calc(100dvh - 20px);padding:26px 22px}.member-modal h2{font-size:25px}}
