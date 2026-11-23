@@ -58,3 +58,8 @@
 /* Give the main M-PESA Paybill number extra prominence */
 .giving-details .giving-method:first-child strong{font-size:29px;letter-spacing:.045em}
 @media(max-width:650px){.giving-details .giving-method:first-child strong{font-size:26px}}
+
+/* Blue number panels for the giving payment details */
+.giving-details .giving-method strong{display:block;background:#102b67;color:#fff;padding:10px 13px;border-radius:5px;margin-top:5px}
+.giving-details .giving-method:first-child strong{font-size:29px;letter-spacing:.045em}
+@media(max-width:650px){.giving-details .giving-method:first-child strong{font-size:26px}}
