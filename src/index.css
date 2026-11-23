@@ -102,3 +102,15 @@
 
 /* Public footer app link; admin entry is intentionally not shown in navigation */
 .footer-app-link{color:#e5b744;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.04em}.footer-app-link:hover{text-decoration:underline}
+
+
+/* TRPH member access and membership number */
+.member-access-button{flex:none;margin-left:12px;padding:10px 14px;background:#102b67;border:1px solid #e5b744;color:#f0c45c;font:700 10px 'DM Sans',sans-serif;letter-spacing:.04em;cursor:pointer;white-space:nowrap}
+.member-access-button:hover{background:#183a80}
+.member-dashboard{max-width:1080px;margin:24px auto;padding:25px 28px;background:#f8f6f0;border:1px solid #e5b744;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.member-dashboard h2{font-size:25px;color:#142b60;margin:8px 0}.member-dashboard h2 em{font-family:'Playfair Display',serif;color:#bd2e39}.member-dashboard p{font-size:12px;color:#727b8b;margin:0}
+.member-number-card{background:#102b67;color:#fff;padding:18px 24px;min-width:220px;border-left:4px solid #e5b744;display:flex;flex-direction:column;gap:7px}.member-number-card small{font-size:9px;letter-spacing:.14em;color:#f0c45c;font-weight:800}.member-number-card strong{font-size:29px;letter-spacing:.06em;color:#f0c45c}.member-number-card span{font-size:10px;color:#fff}
+.member-modal .forgot-password-button{display:block;margin:0 auto 16px;border:0;background:none;color:#183064;font:700 11px 'DM Sans',sans-serif;cursor:pointer;text-decoration:underline}
+.members-admin-list>p{font-size:12px;color:#727b8b}.members-admin-list .admin-list-item{border:1px solid #eee9df;margin-top:5px}
+@media(max-width:850px){.member-access-button{margin:8px 0 0}.header{flex-wrap:wrap;height:auto;min-height:80px;padding-top:12px;padding-bottom:12px}.member-dashboard{margin:16px 12px;padding:20px}}
+@media(max-width:650px){.member-access-button{width:100%;margin:8px 0 0}.member-number-card{width:100%}.member-dashboard{align-items:stretch}.member-dashboard>.outline-admin{justify-content:center}}
