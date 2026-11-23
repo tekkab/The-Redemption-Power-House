@@ -14,6 +14,8 @@ create table if not exists public.members (
   created_at timestamptz not null default now()
 );
 
+alter table public.members add column if not exists address text;
+
 alter table public.members enable row level security;
 
 drop policy if exists "Members can read their own membership" on public.members;
@@ -21,7 +23,13 @@ create policy "Members can read their own membership" on public.members
   for select to authenticated
   using (id = auth.uid() or public.is_admin());
 
-grant select on public.members to authenticated;
+drop policy if exists "Members can update their own membership details" on public.members;
+create policy "Members can update their own membership details" on public.members
+  for update to authenticated
+  using (id = auth.uid())
+  with check (id = auth.uid());
+
+grant select, update on public.members to authenticated;
 
 create or replace function public.handle_new_trph_member()
 returns trigger
