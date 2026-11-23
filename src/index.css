@@ -19,3 +19,14 @@
 
 /* Weekly message read-more control */
 .weekly-article-text{white-space:pre-wrap;overflow-wrap:anywhere}.weekly-toggle{margin-top:10px;padding:8px 13px;border:1px solid #e2b443;background:transparent;color:#f0c45c;font:700 11px 'DM Sans';cursor:pointer}.weekly-toggle:hover{background:#e2b443;color:#102b67}
+
+
+/* Announcement poster upload and display */
+.poster-upload-field{grid-column:1/-1;background:#f8f6f0;border:1px solid #e8e1d3;padding:15px}
+.poster-upload-field label{display:flex;flex-direction:column;gap:9px}
+.poster-upload-field input[type=file]{background:#fff;padding:10px;font:12px 'DM Sans'}
+.poster-upload-field>p{font-size:11px;line-height:1.6;color:#737b8c;margin:10px 0 0}
+.poster-preview-wrap{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-top:13px}
+.poster-preview-wrap img{width:min(220px,100%);max-height:260px;object-fit:contain;background:#fff;border:1px solid #e5dfd3;padding:5px}
+.poster-preview-wrap button{border:0;background:#fbefef;color:#b52b37;padding:9px 12px;font:600 11px 'DM Sans';cursor:pointer}
+.announcement-poster{display:block;width:100%;max-height:330px;object-fit:contain;object-position:center;background:#f8f6f0;margin:14px 0 10px;border:1px solid #eee9df}
