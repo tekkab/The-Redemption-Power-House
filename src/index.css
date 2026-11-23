@@ -30,3 +30,26 @@
 .poster-preview-wrap img{width:min(220px,100%);max-height:260px;object-fit:contain;background:#fff;border:1px solid #e5dfd3;padding:5px}
 .poster-preview-wrap button{border:0;background:#fbefef;color:#b52b37;padding:9px 12px;font:600 11px 'DM Sans';cursor:pointer}
 .announcement-poster{display:block;width:100%;max-height:330px;object-fit:contain;object-position:center;background:#f8f6f0;margin:14px 0 10px;border:1px solid #eee9df}
+
+
+/* Verified church giving and contact details */
+.giving-details{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}
+.giving-method{background:#fff;border:1px solid #e9e3d8;border-left:3px solid #d9ad47;padding:16px 18px}
+.payment-label{display:block;font-size:9px;letter-spacing:.14em;font-weight:800;color:#b52b37;margin-bottom:7px}
+.giving-method strong{display:block;font-size:22px;letter-spacing:.025em;color:#102b67;overflow-wrap:anywhere}
+.giving-method p{font-size:11px;color:#747d8c;margin:6px 0 0}
+.giving-card .payment-label{color:#f0c45c;margin-top:8px}
+.giving-card .till-number{display:block;font-size:29px;color:#fff;letter-spacing:.05em;margin:6px 0}
+.giving-card>b{display:block;margin:5px 0 15px}
+.giving-card small{display:block;line-height:1.8}
+.contact-section{background:#fff;padding:75px max(calc((100% - 1032px)/2),24px);display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.contact-section h2{font-size:36px;line-height:1.15;color:#132b61;margin:12px 0}
+.contact-section h2 em{font-family:'Playfair Display',serif;color:#bd2e39}
+.contact-section>div>p{font-size:13px;line-height:1.8;color:#727b8b;max-width:420px}
+.contact-details{display:grid;gap:12px}
+.contact-details a{display:flex;align-items:center;gap:15px;padding:17px;background:#f8f6f0;border:1px solid #ece6da;text-decoration:none;color:#173064}
+.contact-details a>svg{flex:none;color:#bd2e39;width:21px;height:21px}
+.contact-details a span{display:flex;flex-direction:column;gap:5px;min-width:0}
+.contact-details b{font-size:12px}
+.contact-details small{font-size:11px;line-height:1.6;color:#737b8c;overflow-wrap:anywhere}
+@media(max-width:650px){.contact-section{grid-template-columns:1fr;gap:25px;padding:60px 20px}.contact-section h2{font-size:31px}.giving-method strong{font-size:19px}}
