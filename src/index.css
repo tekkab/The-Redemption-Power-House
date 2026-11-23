@@ -99,3 +99,6 @@
 /* Homepage app installation action */
 .install-app-button{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;background:#e5b744;border:1px solid #e5b744;color:#102b67;font:700 11px 'DM Sans',sans-serif;letter-spacing:.04em;cursor:pointer;min-height:44px}.install-app-button:hover{background:#f2cf72}.install-app-button:disabled{opacity:.75;cursor:default}.install-instructions{display:grid;gap:8px;margin:20px 0 24px}.install-instructions b{font-size:12px;color:#142b60}.install-instructions span{font-size:12px;line-height:1.7;color:#727b8b;margin-bottom:8px}.install-help-modal .gold-button{margin-top:5px}
 @media(max-width:650px){.hero-actions{align-items:stretch;flex-direction:column}.hero-actions>*{justify-content:center;text-align:center}.install-app-button{width:100%}}
+
+/* Public footer app link; admin entry is intentionally not shown in navigation */
+.footer-app-link{color:#e5b744;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.04em}.footer-app-link:hover{text-decoration:underline}
