@@ -18,6 +18,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -31,8 +35,8 @@ jobs:
         run: npm install
       - name: Prepare church logo for website and app icons
         run: |
-          python3 -m pip install --user Pillow
-          python3 scripts/apply-church-logo.py
+          python -m pip install Pillow
+          python scripts/apply-church-logo.py
         env:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
@@ -44,7 +48,7 @@ jobs:
       - name: Add Android platform
         run: npx cap add android
       - name: Apply logo to native Android launcher icons
-        run: python3 scripts/apply-church-logo.py
+        run: python scripts/apply-church-logo.py
         env:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
