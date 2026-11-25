@@ -123,3 +123,55 @@
 .admin-modal{max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;}
 .member-modal form{padding-bottom:4px;}
 @media(max-width:650px){.modal-backdrop{place-items:center;padding:10px}.admin-modal{width:100%;max-height:calc(100dvh - 20px);padding:26px 22px}.member-modal h2{font-size:25px}}
+
+
+/* TRPH homepage visual refresh — inspired by the supplied reference */
+:root{--trph-navy:#101d4b;--trph-blue:#172f78;--trph-gold:#ffd329;--trph-white:#f8f8ff}
+body{background:#101d4b}
+.header{height:118px;max-width:none;width:100%;padding:0 3.6% 0 6.3%;background:#111d4b;border-top:2px solid #d8b52e;border-bottom:1px solid rgba(255,255,255,.09);color:white}
+.brand{gap:17px;color:white}
+.church-logo{width:78px;height:78px;border-radius:50%;object-fit:contain;background:#fff;border:3px solid var(--trph-gold);padding:2px}
+.brand-mark{width:78px;height:78px;color:#101d4b;background:#fff}
+.brand-copy{gap:5px;line-height:1}
+.brand-copy b{font-size:29px;letter-spacing:.12em;color:#fff;font-weight:700}
+.brand-copy strong{font-size:12px;letter-spacing:.43em;color:#fff;font-weight:500}
+.nav{gap:42px}
+.nav-link{font:500 18px 'DM Sans',sans-serif;color:#f4f5ff;padding:12px 2px}
+.nav-link.active,.nav-link:hover{color:var(--trph-gold)}
+.member-access-button{margin:0;padding:18px 23px;background:#1a3789;border:1px solid #5275dc;color:#fff;font:700 16px 'DM Sans',sans-serif;letter-spacing:0}
+.member-access-button:hover{background:#2548a7}
+.menu-toggle{color:#fff}
+.hero{min-height:calc(100vh - 118px);padding:86px max(calc((100% - 1388px)/2),10.35%);align-items:flex-start;background:linear-gradient(108deg,#101d4b 0%,#152b70 55%,#1c3988 100%);overflow:hidden}
+.hero:after{display:none}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 77% 48%,rgba(44,82,174,.28),transparent 48%);z-index:-1}
+.hero-content{max-width:710px;padding-top:0}
+.hero .eyebrow{font-size:14px;letter-spacing:.22em;color:#f4c637;gap:15px}
+.hero .eyebrow span{width:36px;height:1px;background:#f4c637}
+.welcome-kicker{margin-top:66px;color:#f1c64c;font-size:16px;letter-spacing:.34em;font-weight:500}
+.hero h1{font:400 clamp(76px,8.1vw,142px)/.99 'Playfair Display',Georgia,serif;letter-spacing:-.055em;margin:24px 0 34px;color:#fbfbff}
+.hero h1 em{font:italic 600 1em/.98 'Playfair Display',Georgia,serif;color:var(--trph-gold)}
+.hero-content>p{max-width:620px;color:#e0e6fa;font-size:21px;line-height:1.8;margin:38px 0 0}
+.hero-actions{gap:17px;margin-top:42px;flex-wrap:wrap}
+.hero-actions .gold-button,.hero-actions .outline-button{min-height:68px;padding:0 30px;font:700 16px 'DM Sans',sans-serif;border-radius:0}
+.hero-actions .gold-button{background:var(--trph-gold);color:#10204e;border:1px solid var(--trph-gold)}
+.hero-actions .gold-button:hover{background:#ffe16a}
+.hero-actions .outline-button{background:transparent;border:1px solid #dce4ff;color:#fff}
+.hero-actions .outline-button:hover{background:#ffffff16}
+.hero-side{right:2%;top:auto;bottom:8%;transform:none;opacity:.95}
+.hero-side .vertical-word{color:#f4d66f;font-size:10px;letter-spacing:.48em}
+.hero-foot{display:none}
+@media(max-width:1050px){
+ .header{padding:0 24px}.nav{gap:18px}.nav-link{font-size:15px}.brand-copy b{font-size:23px}
+ .hero{padding:76px 7%}.hero-side{right:3%}
+}
+@media(max-width:650px){
+ .header{height:82px;padding:0 18px}.church-logo,.brand-mark{width:54px;height:54px}.brand{gap:10px}.brand-copy b{font-size:21px}.brand-copy strong{font-size:9px;letter-spacing:.36em}
+ .menu-toggle{display:block}.nav{top:82px;background:#111d4b;border-top:1px solid #ffffff20;padding:15px 22px}.nav-link{color:#fff;font-size:15px}.member-access-button{width:auto;margin:0 0 0 auto;padding:10px 12px;font-size:11px}
+ .hero{min-height:calc(100svh - 82px);padding:58px 24px 75px}.hero-content{max-width:100%}.hero .eyebrow{font-size:10px;letter-spacing:.16em}.hero .eyebrow span{width:20px}
+ .welcome-kicker{margin-top:56px;font-size:12px;letter-spacing:.28em}.hero h1{font-size:clamp(56px,15vw,84px);margin:20px 0 25px}.hero-content>p{font-size:16px;line-height:1.7;margin-top:24px;max-width:450px}
+ .hero-actions{margin-top:30px;gap:12px}.hero-actions .gold-button,.hero-actions .outline-button{min-height:56px;width:100%;font-size:14px;padding:0 18px}.hero-side{display:none}
+}
+@media(min-width:651px) and (max-width:850px){
+ .header{height:96px}.nav{gap:11px}.nav-link{font-size:13px}.member-access-button{font-size:12px;padding:13px 14px}
+ .hero{min-height:calc(100vh - 96px);padding-top:72px}.hero h1{font-size:clamp(72px,9vw,104px)}
+}
