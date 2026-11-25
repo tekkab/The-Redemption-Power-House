@@ -1,7 +1,9 @@
 name: Build Android APK
 on:
   workflow_dispatch:
-  # Run manually while the mobile package is being tested.
+  push:
+    branches: [main]
+  # Builds a test APK after each main-branch update.
 
 permissions:
   contents: read
