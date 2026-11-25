@@ -1,5 +1,5 @@
-const CACHE_NAME = 'trph-shell-v2';
-const APP_SHELL = ['./', './index.html', './manifest.webmanifest', './trph-icon.svg'];
+const CACHE_NAME = 'trph-shell-v3';
+const APP_SHELL = ['./', './index.html', './manifest.webmanifest', './trph-icon.svg', './trph-icon-192.png', './trph-icon-512.png'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
 });
