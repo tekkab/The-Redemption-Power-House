@@ -3,6 +3,7 @@
 import io
 import json
 import os
+import shutil
 import sys
 import urllib.request
 from pathlib import Path
@@ -46,6 +47,12 @@ def fit_logo(size, padding=0.12):
 
 fit_logo(192).save(root / "trph-icon-192.png", optimize=True)
 fit_logo(512).save(root / "trph-icon-512.png", optimize=True)
+public = root / "public"
+public.mkdir(parents=True, exist_ok=True)
+fit_logo(192).save(public / "trph-icon-192.png", optimize=True)
+fit_logo(512).save(public / "trph-icon-512.png", optimize=True)
+shutil.copy2(root / "manifest.webmanifest", public / "manifest.webmanifest")
+shutil.copy2(root / "trph-icon.svg", public / "trph-icon.svg")
 
 android_res = root / "android/app/src/main/res"
 if android_res.exists():
