@@ -234,3 +234,7 @@ footer,
 @media(prefers-reduced-motion:no-preference){
   .nav-link,.gold-button,.outline-button,.member-access-button{transition:color .18s ease,background-color .18s ease}
 }
+
+
+/* Make the 'Giving &' heading text stand out in the church brand red */
+.giving h2{color:#bd2e39!important}
