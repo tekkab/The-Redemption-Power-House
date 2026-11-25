@@ -29,6 +29,13 @@ jobs:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
       - name: Install dependencies
         run: npm install
+      - name: Prepare church logo for website and app icons
+        run: |
+          python3 -m pip install --user Pillow
+          python3 scripts/apply-church-logo.py
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
       - name: Build web application
         run: npm run build
         env:
@@ -36,6 +43,11 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
       - name: Add Android platform
         run: npx cap add android
+      - name: Apply logo to native Android launcher icons
+        run: python3 scripts/apply-church-logo.py
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
       - name: Sync Capacitor
         run: npx cap sync android
       - name: Build installable debug APK
