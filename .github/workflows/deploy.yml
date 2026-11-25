@@ -18,12 +18,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
       - run: npm install
       - run: npm run build
         env:
           GITHUB_PAGES: 'true'
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+      - name: Build Android APK for website download
+        run: |
+          npx cap add android
+          npx cap sync android
+          chmod +x android/gradlew
+          cd android
+          ./gradlew assembleDebug
+          cd ..
+          mkdir -p dist/downloads
+          cp android/app/build/outputs/apk/debug/app-debug.apk dist/downloads/TRPH-Android.apk
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
