@@ -241,3 +241,8 @@ footer,
 /* Ensure the full Giving & Tithes heading and supporting copy are readable */
 .giving h2,.giving h2 em{color:#e5b744!important}
 .giving-copy>p{color:#e5eaf4!important}
+
+
+/* Improve contrast for the Church Activities heading on its navy section */
+#activities .section-heading h2,
+#activities .section-heading h2 em{color:#e5b744!important}
