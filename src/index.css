@@ -236,5 +236,8 @@ footer,
 }
 
 
-/* Make the 'Giving &' heading text stand out in the church brand red */
-.giving h2{color:#e5b744!important}
+
+
+/* Ensure the full Giving & Tithes heading and supporting copy are readable */
+.giving h2,.giving h2 em{color:#e5b744!important}
+.giving-copy>p{color:#e5eaf4!important}
