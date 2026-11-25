@@ -183,3 +183,54 @@ body{background:#101d4b}
 .hero h1 em{font-weight:500;font-style:italic}
 .section h2,.message-copy h2,.giving h2,.connect-section h2{font-weight:500;letter-spacing:-.025em}
 .nav-link,.member-access-button,.gold-button,.outline-button{font-family:'DM Sans',Arial,sans-serif}
+
+ 
+/* Accessibility and typography update: Oswald throughout TRPH */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+:root{font-family:'Oswald',Arial,sans-serif}
+html,body,button,input,select,textarea{font-family:'Oswald',Arial,sans-serif}
+body *:not(svg):not(svg *){font-family:'Oswald',Arial,sans-serif!important}
+
+/* Improve muted text contrast on light surfaces */
+.quick-strip small,
+.section-heading>p,
+.notice-card p,
+.notice-meta small,
+.like-button,
+.empty-state,
+.message-copy p,
+.giving-copy>p,
+.giving-note small,
+.connect-section>p,
+.admin-modal>p,
+.admin-modal small,
+.admin-head p,
+.publish-form label,
+.members-admin-list>p,
+.member-dashboard p,
+.member-profile-form>p,
+.member-profile-form label,
+.contact-section>div>p,
+.contact-details small,
+.poster-upload-field>p,
+.weekly-latest,
+footer,
+.logo-settings>p,
+.pastor-photo-settings>p{
+  color:#535d70;
+}
+.notice-meta small,.like-button{color:#535d70}
+.publish-form input,.publish-form select,.publish-form textarea,
+.member-profile-form input,.member-profile-form textarea{
+  color:#17213a;
+}
+.admin-modal label,.publish-form label,.member-profile-form label{color:#17213a}
+.form-message{color:#17213a!important}
+.topline,.hero,.message-section,.youtube-live-section,
+.giving-card,.giving-method,.member-number-card,.admin-link,
+.member-access-button,.install-app-button,.footer-app-link{
+  color:#fff;
+}
+@media(prefers-reduced-motion:no-preference){
+  .nav-link,.gold-button,.outline-button,.member-access-button{transition:color .18s ease,background-color .18s ease}
+}
