@@ -39,7 +39,7 @@ Deno.serve(async (req) => {
   if (userError || !userData.user) return json({ error: "Your administrator session is invalid. Please sign in again." }, 401);
 
   const { data: role, error: roleError } = await admin.from("admin_roles").select("user_id,role").eq("user_id", userData.user.id).maybeSingle();
-  if (roleError) return json({ error: "Administrator verification failed while reading the role record. Please check the Supabase Edge Function service-role configuration." }, 500);
+  if (roleError) return json({ error: "Administrator role lookup failed.", database_code: roleError.code ?? "UNKNOWN", database_message: roleError.message ?? "No database error message was returned." }, 500);
   if (!role || role.user_id !== userData.user.id || !["super_admin", "editor"].includes(role.role)) return json({ error: "The signed-in account does not have an approved administrator role in this Supabase project." }, 403);
 
   const stateBytes = crypto.getRandomValues(new Uint8Array(32));
