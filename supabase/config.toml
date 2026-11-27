@@ -1,0 +1,8 @@
+[functions.youtube-oauth-start]
+verify_jwt = false
+
+[functions.youtube-oauth-callback]
+verify_jwt = false
+
+[functions.youtube-live-status]
+verify_jwt = false
