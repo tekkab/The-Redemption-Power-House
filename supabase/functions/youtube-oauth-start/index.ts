@@ -38,8 +38,9 @@ Deno.serve(async (req) => {
   const { data: userData, error: userError } = await admin.auth.getUser(accessToken);
   if (userError || !userData.user) return json({ error: "Your administrator session is invalid. Please sign in again." }, 401);
 
-  const { data: role } = await admin.from("admin_roles").select("role").eq("user_id", userData.user.id).maybeSingle();
-  if (!role || !["super_admin", "editor"].includes(role.role)) return json({ error: "Only an approved church administrator can connect YouTube." }, 403);
+  const { data: role, error: roleError } = await admin.from("admin_roles").select("user_id,role").eq("user_id", userData.user.id).maybeSingle();
+  if (roleError) return json({ error: "Administrator verification failed while reading the role record. Please check the Supabase Edge Function service-role configuration." }, 500);
+  if (!role || role.user_id !== userData.user.id || !["super_admin", "editor"].includes(role.role)) return json({ error: "The signed-in account does not have an approved administrator role in this Supabase project." }, 403);
 
   const stateBytes = crypto.getRandomValues(new Uint8Array(32));
   const state = [...stateBytes].map((b) => b.toString(16).padStart(2, "0")).join("");
