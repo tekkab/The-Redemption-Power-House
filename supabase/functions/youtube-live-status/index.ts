@@ -40,13 +40,28 @@ Deno.serve(async (req) => {
     return json({ connected: false, live: false, error: "The Google connection needs to be renewed." }, 200);
   }
 
-  const liveResponse = await fetch("https://www.googleapis.com/youtube/v3/liveBroadcasts?part=id,snippet,status&broadcastStatus=active&mine=true", {
+  const liveResponse = await fetch("https://www.googleapis.com/youtube/v3/liveBroadcasts?part=id,snippet,status&mine=true", {
     headers: { Authorization: `Bearer ${tokenData.access_token}` },
   });
   const liveData = await liveResponse.json();
-  if (!liveResponse.ok) return json({ connected: true, live: false, error: "YouTube Live status is temporarily unavailable." }, 200);
+  if (!liveResponse.ok) {
+    console.error("YouTube API error:", {
+      status: liveResponse.status,
+      message: liveData?.error?.message,
+      reason: liveData?.error?.errors?.[0]?.reason,
+    });
+    return json({
+      connected: true,
+      live: false,
+      error: "YouTube Live status is temporarily unavailable.",
+      diagnostic: liveData?.error?.message ?? "Unknown YouTube API error",
+      status: liveResponse.status,
+    }, 200);
+  }
 
-  const broadcast = liveData.items?.[0];
+  // The YouTube API does not allow mine=true together with broadcastStatus.
+  // Fetch this account's broadcasts, then select the one currently live.
+  const broadcast = liveData.items?.find((item: any) => item.status?.lifeCycleStatus === "live");
   if (!broadcast) return json({ connected: true, live: false, channel: saved.connected_channel_title });
   return json({
     connected: true,
